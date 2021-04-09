@@ -1,0 +1,17 @@
+div.Container{
+   height: 500px;
+   width: 80%;
+   margin:auto;
+   background-color: white;
+}
+
+div.Footer{
+   font-style: italic;
+   padding:10px;
+}
+
+div.Header{
+    margin:auto;
+}
+
+

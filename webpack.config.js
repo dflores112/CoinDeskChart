@@ -1,5 +1,5 @@
 module.exports = {
-  entry: __dirname + '/dist/app.js',
+  entry: `${__dirname}/dist/app.js`,
   module: {
     rules: [
       {
@@ -8,14 +8,14 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-react']
-          }
-        }
-      }
-    ]
+            presets: ['@babel/preset-react'],
+          },
+        },
+      },
+    ],
   },
-   output: {
+  output: {
     filename: 'bundle.js',
-    path: __dirname + '/dist/src'
-  }
+    path: `${__dirname}/dist/src`,
+  },
 };

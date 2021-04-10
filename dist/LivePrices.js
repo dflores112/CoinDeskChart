@@ -5,6 +5,7 @@ import axios from 'axios';
 function LivePrices() {
   const [prices, setPrices] = useState([]);
   const [dates, setDates] = useState([]);
+  const [live, setLive] = useState(false);
 
   const data = {
     labels: dates,
@@ -31,6 +32,7 @@ function LivePrices() {
         dates.push(res.data[1]);
         setDates(dates);
         setPrices(newPrices);
+        localStorage.setItem(res.data[1], res.data[0]);
       })
       .catch((err) => console.log(err));
   }

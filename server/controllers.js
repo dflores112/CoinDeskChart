@@ -1,7 +1,6 @@
 const axios = require('axios');
 
 module.exports = {
-
   getBitCoinScores: (req, res) => {
     axios.get('https://api.coindesk.com/v1/bpi/historical/close.json?start=2021-03-08&end=2021-04-08')
       .then((data) => res.status(200).send(data.data.bpi))

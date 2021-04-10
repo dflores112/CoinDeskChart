@@ -39,6 +39,8 @@ function CoinChart() {
     retrieveCoinDeskScores();
   }, []);
 
+  console.log(localStorage)
+
   return (
     <div className="Window">
       <div className="Container">

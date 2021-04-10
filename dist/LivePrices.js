@@ -44,6 +44,18 @@ function LivePrices() {
     }, 60000);
   }, []);
 
+  useEffect(() => {
+    const times = Object.keys(localStorage);
+    const rate = Object.values(localStorage);
+    const temp = rate.map((price) => Number(price));
+    if (live) {
+      setDates(times);
+      setPrices(temp);
+    } else {
+      retrieveCoinDeskScores();
+    }
+  }, [live]);
+
   return (
     <>
       <button onClick={() => setLive(!live)}>Live</button>

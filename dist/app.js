@@ -7,7 +7,6 @@ import LivePrices from './LivePrices.js'
 function CoinChart() {
   const [prices, setPrices] = useState([]);
   const [dates, setDates] = useState([]);
-  const [live, setLive] = useState(false);
 
   const data = {
     labels: dates,
@@ -38,8 +37,6 @@ function CoinChart() {
   useEffect(() => {
     retrieveCoinDeskScores();
   }, []);
-
-  console.log(localStorage)
 
   return (
     <div className="Window">

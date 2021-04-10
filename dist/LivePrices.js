@@ -27,10 +27,9 @@ function LivePrices() {
     axios.get('current')
       .then((res) => {
         const newPrices = [...prices];
-        const newDates = [...dates];
         newPrices.push(res.data[0]);
-        newDates.push(res.data[1]);
-        setDates(newDates);
+        dates.push(res.data[1]);
+        setDates(dates);
         setPrices(newPrices);
       })
       .catch((err) => console.log(err));
@@ -38,6 +37,9 @@ function LivePrices() {
 
   useEffect(() => {
     retrieveCoinDeskScores();
+    setInterval(() => {
+      retrieveCoinDeskScores();
+    }, 60000);
   }, []);
 
   return (

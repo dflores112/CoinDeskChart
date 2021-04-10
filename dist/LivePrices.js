@@ -45,12 +45,13 @@ function LivePrices() {
   }, []);
 
   useEffect(() => {
+    const price = [];
     const times = Object.keys(localStorage);
-    const rate = Object.values(localStorage);
-    const temp = rate.map((price) => Number(price));
+    times.sort();
+    times.forEach((time) => price.push(localStorage[time]));
     if (live) {
       setDates(times);
-      setPrices(temp);
+      setPrices(price);
     } else {
       retrieveCoinDeskScores();
     }

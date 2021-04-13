@@ -13,7 +13,7 @@ class App extends React.Component {
     this.ViewStoredPrices = this.ViewStoredPrices.bind(this);
   }
 
-  // Begin interval calls add live prices to chart
+  // Begin interval calls and add live prices to chart
   componentDidMount() {
     this.retrieveCurrentPrice();
     const interval = setInterval(() => {

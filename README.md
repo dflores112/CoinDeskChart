@@ -1,6 +1,6 @@
 # CoinDesk Prices
 
-> React application built to allow users to select a timeframe to view recent prices of Bitcoin
+> React application built to allow users to view live BitCoin pricing
 
 ### Installing Dependencies
 
@@ -13,10 +13,8 @@ npm run start
 ```
 ### Uses
 
-- When a user enter site, the site should render historical chart data first.
+- When a user enter site, the site will render a chart showing live prices that is updated by the minute
 - A user can then toggle "BitCoin Live Pricing" and "Your Prices".
-- A user can pick between two line graphs by the header on top of the page. "Historical BitCoin Pricing" & "Live Pricing
-- Live prices will add additonal pricing every minute
 - When App is Live the interval will begin or end when button is clicked.
 -  "Your Prices" will pull up any saved price lookups in storage
 

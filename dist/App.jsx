@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import axios from 'axios';
 import ReactDOM from 'react-dom';
 import ChartComponent from './ChartComponent.jsx';
@@ -13,14 +13,16 @@ class App extends React.Component {
     this.ViewStoredPrices = this.ViewStoredPrices.bind(this);
   }
 
+  // Begin interval calls add live prices to chart
   componentDidMount() {
     this.retrieveCurrentPrice();
-    let interval = setInterval(() => {
+    const interval = setInterval(() => {
       this.retrieveCurrentPrice();
     }, 60000);
     this.setState({ id: interval });
   }
 
+  // Retrieve current BitCoin pricing and add to chart
   retrieveCurrentPrice() {
     const { prices, dates } = this.state;
     const newPrices = [...prices];
@@ -35,11 +37,12 @@ class App extends React.Component {
       .catch((err) => console.log(err));
   }
 
+  // Pull stored prices from localstorage or continue live requests
   ViewStoredPrices() {
     const { live, id } = this.state;
     if (live) {
       this.retrieveCurrentPrice();
-      let interval = setInterval(() => {
+      const interval = setInterval(() => {
         this.retrieveCurrentPrice();
       }, 60000);
       this.setState({ id: interval });
@@ -53,6 +56,7 @@ class App extends React.Component {
     }
   }
 
+  // Reset chart when user goes live
   resetState() {
     const { live } = this.state;
     this.setState({ dates: [], prices: [], live: !live }, this.ViewStoredPrices);

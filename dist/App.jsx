@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import ReactDOM from 'react-dom';
 import ChartComponent from './ChartComponent.jsx';
+import Styles from './Styled.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -67,10 +68,13 @@ class App extends React.Component {
     const Saved = 'Saved Prices';
     const GoLive = ' Go Live';
     return (
-      <>
-        <button onClick={() => this.resetState()}>{live ? Saved : GoLive }</button>
+      <Styles.Container>
+        <Styles.ContainerGrid>
+          <Styles.Button onClick={() => this.resetState()}>{live ? Saved : GoLive }</Styles.Button>
+          <Styles.Header>BitCoin Pricing</Styles.Header>
+        </Styles.ContainerGrid>
         <ChartComponent dates={dates} prices={prices} />
-      </>
+      </Styles.Container>
     );
   }
 }

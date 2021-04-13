@@ -2,6 +2,11 @@
 
 > React application built to allow users to view live BitCoin pricing
 
+<img src="LiveViewing.png" alt="LiveViewing"/>
+
+<img src="StoredViewing.png" alt="StoredViewing"/>
+
+
 ### Installing Dependencies
 
 From within the root directory:
